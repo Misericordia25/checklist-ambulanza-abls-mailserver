@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<title>Checklist Ambulanza A-BLS - Misericordia</title>
+<title>Checklist VEICOLI SPECIALI - Misericordia</title>
  
 <!-- librerie -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -198,7 +198,7 @@ font-weight:700;
  
 <!-- Copertina -->
 <div class="copertina">
-<h1>CHECKLIST AMBULANZA A-BLS</h1>
+<h1>CHECKLIST VEICOLI SPECIALI</h1>
 <p><strong>Data/Ora apertura documento:</strong>
   <span id="dataOraCorrente"></span></p>
 </div>
@@ -1434,13 +1434,13 @@ readonly
  <!-- GIALLO: solo crea/scarica PDF sul dispositivo --> 
  <button id="btnAnteprima" class="btn no-print"
    style="background:#ffc107;" onclick="anteprimaCondivisionePDF()">
-   📤 Crea PDF per ANALISI
+   📤 Crea PDF per INVIO MANUALE via MAIL
  </button>
  
  <!-- VERDE: genera PDF + invia via mail usando impostazioni -->
  <button id="btnInviaMail" class="btn no-print"
    style="background:#28a745;" onclick="inviaChecklistViaMail()">
-   ✉️ Invia alla mail configurata
+   ✉️ PULSANTE NON ABILITATO
  </button>
  
  <button class="btn no-print"
@@ -1449,7 +1449,7 @@ readonly
  </button>
 </div>
  
-by Marco P. (MSA) volontario Misericordia             (vers0.1)2_2026
+by Marco P. (MSA) volontario Misericordia             (vers0.1)4_2026
  
 <script>
 /* ============================
@@ -1783,7 +1783,7 @@ function resetChecklist(){
   FILENAME PDF
 ============================ */
 function filenameWithTarga(){
- const titolo = 'Checklist_Ambulanza A-BLS';
+ const titolo = 'Checklist_VEICOLI SPECIALI';
  const targaRaw = (document.getElementById('targa')?.value || 'NON_TARGA');
  const targa = String(targaRaw).trim().replace(/\s+/g,'_').replace(/[^A-Za-z0-9_\-]/g,'');
  const now = new Date();
@@ -1876,7 +1876,7 @@ async function anteprimaCondivisionePDF(){
  const dataStr = now.toLocaleDateString('it-IT')+' '+now.toTimeString().slice(0,5);
  const info = document.createElement('div');
  info.style = 'font-weight:bold;margin-bottom:12px;';
- info.textContent = `Checklist: Ambulanza A-BLS — Veicolo: ${veicolo} — Data compilazione: ${dataStr}`;
+ info.textContent = `Checklist: VEICOLI SPECIALI — Veicolo: ${veicolo} — Data compilazione: ${dataStr}`;
  const firstH2 = bodyCopy.querySelector('h2');
  if(firstH2 && firstH2.parentNode) firstH2.parentNode.insertBefore(info,firstH2);
  
@@ -2068,7 +2068,7 @@ const now = new Date();
 const dataStr = now.toLocaleDateString('it-IT')+' '+now.toTimeString().slice(0,5); 
 const info = document.createElement('div'); 
 info.style = 'font-weight:bold;margin-bottom:12px;'; 
-info.textContent = ` Checklist: Ambulanza A-BLS — Veicolo: ${veicolo} — Data compilazione: ${dataStr}`; 
+info.textContent = ` Checklist: VEICOLI SPECIALI — Veicolo: ${veicolo} — Data compilazione: ${dataStr}`; 
 const firstH2 = bodyCopy.querySelector('h2'); 
 if(firstH2 && firstH2.parentNode) firstH2.parentNode.insertBefore(info,firstH2); 
  
